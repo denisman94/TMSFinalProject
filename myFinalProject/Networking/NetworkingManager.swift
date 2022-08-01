@@ -1,7 +1,6 @@
 import Foundation
 
 class NetworkingManager {
-    var isLoading = true
     
     private func buildURL(endpoind: API) -> URLComponents {
         var components = URLComponents()
@@ -47,7 +46,6 @@ class NetworkingManager {
             do {
                 let responseObject = try JSONDecoder().decode(T.self, from: data)
                 completion(.success(responseObject))
-                self.isLoading = false
             } catch {
                 completion(.failure(.invalidData))
             }

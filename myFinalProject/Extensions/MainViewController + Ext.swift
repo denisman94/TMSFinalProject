@@ -59,7 +59,6 @@ extension MainViewController: MainViewDelegate, UIPickerViewDelegate, UIPickerVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as? CustomCell else { return UITableViewCell()}
         let country = countries[indexPath.row]
-        print(indexPath.row)
         cell.configure(with: country)
         return cell
     }
